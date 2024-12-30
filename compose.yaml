@@ -1,8 +1,9 @@
 name: "my-shell"
 services:
   ssh:
-    image: lscr.io/linuxserver/openssh-server:latest
-    pull_policy: always
+    build:
+      context: app
+      target: builder
     hostname: tnas
     environment:
       USER_NAME: "mwiget"
@@ -12,7 +13,7 @@ services:
     - /home/mwiget:/config
     ports:
     - 22:2222
-    - 60000-61000:60000-61000/udp
+    - 60000-60100:60000-60100/udp
     dns_search:
       - tail27f72.ts.net
     deploy:
