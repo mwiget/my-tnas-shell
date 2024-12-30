@@ -7,8 +7,6 @@ apk add tmux ipmitool btop mosh git rsync iperf3 bwm-ng k9s kubectl neovim py3-p
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh --yes)
 
-#LV_BRANCH='release-1.4/neovim-0.9' bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh --yes)
-
 wget https://releases.hashicorp.com/terraform/1.10.3/terraform_1.10.3_linux_amd64.zip
 unzip terraform_1.10.3_linux_amd64.zip
 mv terraform /usr/bin/
