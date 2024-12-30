@@ -1,0 +1,19 @@
+name: "my-shell"
+services:
+  ssh:
+    image: lscr.io/linuxserver/openssh-server:latest
+    pull_policy: always
+    hostname: tnas
+    environment:
+      USER_NAME: "mwiget"
+      SUDO_ACCESS: "true"
+    privileged: true
+    volumes:
+    - /home/mwiget:/config
+    ports:
+    - 22:2222
+    - 60000-61000:60000-61000/udp
+    dns_search:
+      - tail27f72.ts.net
+    deploy:
+      replicas: 1
