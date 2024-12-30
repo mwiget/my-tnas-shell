@@ -3,7 +3,7 @@ FROM lscr.io/linuxserver/openssh-server:latest AS builder
 RUN <<EOF
 
 apk update
-apk add tmux ipmitool btop mosh git rsync iperf3 bwm-ng k9s kubectl neovim py3-pip npm nodejs cargo ripgrep alpine-sdk curl htop
+apk add tmux ipmitool btop mosh git rsync iperf3 bwm-ng k9s kubectl neovim py3-pip npm nodejs cargo ripgrep alpine-sdk curl htop lm-sensors util-linux-misc tcpdump neofetch
 
 bash <(curl -s https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.4/neovim-0.9/utils/installer/install.sh --yes)
 
