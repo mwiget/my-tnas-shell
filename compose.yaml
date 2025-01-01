@@ -7,15 +7,22 @@ services:
     hostname: tnas
     environment:
       USER_NAME: "mwiget"
+      PUID: 1000
+      PGID: 1000
       SUDO_ACCESS: "true"
     privileged: true
     volumes:
-    - /home/mwiget:/config
+    - /Volume1/marcel:/config
+    - /Volume1/share:/share
+    - /Volume1/archive:/archive
+    - /etc/resolv.conf:/etc/resolv.conf
     - /sys:/sys
     ports:
     - 22:2222
     - 60000-60100:60000-60100/udp
+    dns:
+    - 100.100.100.100
     dns_search:
-      - tail27f72.ts.net
+    - tail27f72.ts.net
     deploy:
       replicas: 1
